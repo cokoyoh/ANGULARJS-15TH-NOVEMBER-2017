@@ -15,3 +15,14 @@ var additionController =  function ($scope) {
 
 // registering the above controller in the module created
 app.controller("additionController",additionController);
+
+//creating a service called hexad (for hexadecimal)
+app.service('hexad', function() {
+    this.pickNumber = function (x) {
+        return x.toString(16);
+    }
+});
+
+app.controller('hexadController', function($scope, hexad) {
+    $scope.hex = hexad.pickNumber(54075347);
+});

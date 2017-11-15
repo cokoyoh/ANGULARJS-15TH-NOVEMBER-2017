@@ -25,4 +25,5 @@ app.service('hexad', function() {
 
 app.controller('hexadController', function($scope, hexad) {
     $scope.hex = hexad.pickNumber(54075347);
+    console.log("Converting the number 54075347 to its hexadecimal equivalent, you get "+ hexad.pickNumber(54075347));
 });

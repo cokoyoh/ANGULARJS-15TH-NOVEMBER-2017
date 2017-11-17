@@ -3,18 +3,53 @@
 <head>
     <meta charset = "UTF-8">
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-float.css">
     <script src = "js/todo.js"></script>
     <title>Angular Todo List</title>
 </head>
 <body>
-    <div ng-app="todoListApp" ng-controller="todoController">
-        <form ng-submit="addTask()">
-            <input type = "text" placeholder="Add New Task" ng-model="title">
-            <button>Add</button>
-        </form>
-        <ul>
-            <li ng-repeat="task in tasks track by $index">{{task}} &nbsp; <button ng-click="deleteTask()">Delete</button></li>
-        </ul>
+    <div class = "my-nav-bar" id = "class">
+        <div class = "top-bar">
+            <div class = "top-bar-left">
+                <ul class = "dropdown menu" data-dropdown-menu>
+                    <li class = "menu-text">To Do List</li>
+                    <li><a href = "#">Tasks</a></li>
+                    <li><a href = "#">Add Task</a></li>
+                    <li><a href = "#">View Task</a></li>
+                </ul>
+            </div>
+            <div class = "top-bar-right">
+                <ul class = "menu">
+                    <li><input type = "search" placeholder = "Search"></li>
+                    <li>
+                        <button type = "button" class = "button">Search</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class = "grid-container">
+        <div class = "large-8 large-offset-2 columns">
+            <div ng-app = "todoListApp" ng-controller = "todoController">
+                <form ng-submit = "addTask()">
+                    <br>
+                    <div class = "row">
+                        <div class = "large-10 medium-10 columns">
+                            <input type = "text" placeholder = "Add New Task" ng-model = "title">
+                        </div>
+                        <div class = "large-2 medium-2 columns">
+                            <button class = "button primary">Add</button>
+                        </div>
+                    </div>
+                </form>
+                <ul>
+                    <li ng-repeat = "task in tasks track by $index">{{task}} &nbsp;
+                        <a href = "#" class = "button primary small"
+                           ng-click = "deleteTask()">Delete</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>

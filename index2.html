@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app = "myAppModule">
+<!--below is a script to use angular js-->
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src = "js/app-module.js"></script>
+<body ng-controller = "additionController">
+
+    <div>
+        {{message}} <br>
+        <p> Using filters to convert, this is the message from the controller - {{message | uppercase}}</p>
+    </div>
+
+    <div>
+        <p>You scored total marks = {{sum}} </p>
+        <p>Average markes {{sum/3 | number:4}} rounded off to 4 decimal places</p>
+    </div>
+
+    <div ng-controller = "hexadController">
+        <p>
+            Service for convering numbers to hexadecimal in this case the number is 54075347
+        </p>
+        {{hex}}
+    </div>
+
+</body>
+</html>
